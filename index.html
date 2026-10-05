@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Battle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="loginPage" class="login-page">
+    <div class="login-card">
+        <h1>📚 Study Battle</h1>
+        <p>Study together. Earn points. Win!</p>
+        <input type="text" id="username" placeholder="Enter your username" autocomplete="username">
+        <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+        <select id="role">
+            <option value="student">Student</option>
+            <option value="admin">Admin</option>
+        </select>
+        <button type="button" id="loginButton">Login</button>
+        <p id="loginStatus" class="status"></p>
+    </div>
+</section>
+
+<section id="dashboard" class="dashboard hidden">
+    <header>
+        <div>
+            <h1>📚 Study Battle</h1>
+            <p id="welcomeMessage"></p>
+        </div>
+        <div class="header-actions">
+            <button type="button" id="logoutButton" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <div class="score-board">
+        <div class="score-card">
+            <span id="myLabel">👤 You</span>
+            <strong id="myPoints">0</strong>
+            <small>Points</small>
+        </div>
+        <div class="score-card">
+            <span id="friendLabel">🏆 Friend</span>
+            <strong id="friendPoints">0</strong>
+            <small>Points</small>
+        </div>
+    </div>
+
+    <div class="tasks-section">
+        <div class="section-title">
+            <h2>📋 Today's Tasks</h2>
+            <button type="button" id="addTaskButton" class="add-btn hidden">+ Add Task</button>
+        </div>
+        <div id="tasksContainer"></div>
+    </div>
+
+    <div id="addTaskBox" class="add-task-box hidden">
+        <h2>➕ Add New Task</h2>
+        <input type="text" id="taskName" placeholder="Task name">
+        <input type="number" id="taskPoints" placeholder="Points" min="1">
+        <div>
+            <button type="button" id="addTaskConfirmButton">Add Task</button>
+            <button type="button" class="cancel-btn" id="cancelTaskButton">Cancel</button>
+        </div>
+    </div>
+</section>
+
+<div id="cameraModal" class="camera-modal hidden">
+    <video id="cameraVideo" autoplay playsinline></video>
+    <div class="camera-actions">
+        <button type="button" id="takePhotoButton">📸 Take Photo</button>
+        <button type="button" id="switchCameraButton">🔄 Switch Camera</button>
+        <button type="button" id="closeCameraButton">❌ Cancel</button>
+    </div>
+    <canvas id="cameraCanvas" class="hidden"></canvas>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
